@@ -1,5 +1,6 @@
 package edu.temple.helloworld
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -9,14 +10,19 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
 
     // Declare view properties - the first one is done for you
-    lateinit var displayTextView: TextView
+    private lateinit var displayTextView: TextView
+    private lateinit var button: Button
+    private lateinit var Edit: EditText
 
+    @SuppressLint("SetTextI18n", "CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         // Initialize with views defined in Layout - the first one is done for you
         displayTextView = findViewById(R.id.displayTextView)
+        button = findViewById(R.id.clickMeButton)
+        Edit = findViewById(R.id.nameEditText)
 
         
         findViewById<Button>(R.id.clickMeButton).setOnClickListener {
